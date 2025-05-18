@@ -1,0 +1,84 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "resms"
+dynamic = ["version"]
+description = 'Python SDK for ReSMS, a simple and powerful SMS API.'
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "louanbel", email = "louanbelicaud63@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = ["requests>=2.31"]
+
+[project.urls]
+Documentation = "https://github.com/resms/resms-python#readme"
+Issues = "https://github.com/resms/resms-python/issues"
+Source = "https://github.com/resms/resms-python"
+
+[tool.hatch.envs.dev]
+dependencies = [
+  "pytest",
+  "ruff",
+  "mypy",
+  "hatch-vcs",
+  "types-requests"
+]
+inherit = true
+
+[tool.hatch.envs.dev.env-vars]
+PYTHONPATH = "src"
+
+[project.optional-dependencies]
+dev   = ["pytest", "ruff", "mypy", "ipython"]
+async = ["httpx>=0.26"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/resms tests}"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/resms", "README.md", "LICENSE"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/resms"]
+
+[tool.coverage.run]
+source_pkgs = ["resms", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/resms/__about__.py",
+]
+
+[tool.coverage.paths]
+resms = ["src/resms", "*/resms/src/resms"]
+tests = ["tests", "*/resms/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

@@ -1,0 +1,60 @@
+# Environnements virtuels
+.venv/
+env/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Artifacts de build
+build/
+dist/
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# Hatch / pip / wheel caches
+.hatch/
+pip-wheel-metadata/
+*.whl
+
+# Fichiers de logs / débogage
+*.log
+
+# VSCode / JetBrains / éditeurs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Test & coverage
+.coverage
+htmlcov/
+.tox/
+.nox/
+.cache/
+.mypy_cache/
+.pytest_cache/
+coverage.xml
+*.cover
+.hypothesis/
+
+# PyInstaller
+*.spec
+
+# Distribution manuelle
+*.tar.gz
+*.zip
+*.egg
+
+# Types PEP 561
+typings/
+
+# Environnement local uniquement
+.env
+.env.*
