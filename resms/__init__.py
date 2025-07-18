@@ -1,7 +1,5 @@
-import os
-
-from . import sms
+from . import sms, otp
 
 api_key: str | None = None
 
-__all__ = ["sms"]
+__all__ = ["sms", "otp"]

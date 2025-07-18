@@ -25,3 +25,9 @@ class BaseClient:
         resp = requests.post(url, headers=self.headers, json=data)
         resp.raise_for_status()
         return resp.json()
+
+    def delete(self, path, data=None):
+        url = f"{self.BASE_URL}{path}"
+        resp = requests.delete(url, headers=self.headers, json=data)
+        resp.raise_for_status()
+        return resp.json()
