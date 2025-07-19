@@ -3,7 +3,7 @@ from .._client import BaseClient
 
 class OtpService:
     @classmethod
-    def create(
+    def send(
         cls,
         to: str,
         message: str,

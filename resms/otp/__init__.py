@@ -1,6 +1,6 @@
 from .service import OtpService
 
-create = OtpService().create
+send = OtpService().send
 verify = OtpService().verify
 
-__all__ = ["create", "verify"]
+__all__ = ["send", "verify"]
