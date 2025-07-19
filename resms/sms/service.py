@@ -10,4 +10,4 @@ class SMSService:
         }
         if sender_id is not None:
             payload["senderId"] = sender_id
-        return BaseClient().post("/sms/send", payload)
+        return BaseClient().post("/sms", payload)
