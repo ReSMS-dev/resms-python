@@ -33,10 +33,3 @@ class OtpService:
             "code": code,
         }
         return BaseClient().post("/otp/verify", payload)
-
-    @classmethod
-    def delete(cls, otp_id: str):
-        payload = {
-            "otpId": otp_id,
-        }
-        return BaseClient().delete("/otp", payload)
