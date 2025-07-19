@@ -16,11 +16,16 @@ from resms import ReSMS
 ```
 
 ## Usage
-Send you can send your SMS:
+You can send a SMS using:
 ```python
 sms = ReSMS("re-1234")
 sms.send(to="+33123456789", message="Code 123456")
 ```
+
+You can send an OTP using:
+```
+sms = ReSMS("re-1234")
+sms.
 
 ## Documentation
 The full documentation is available at [resms.dev/docs](https://resms.dev/docs).
