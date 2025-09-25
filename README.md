@@ -30,6 +30,8 @@ resms.otp.send(to="+33123456789", message="Your OTP is {CODE}", senderId="ReSMS"
 ## Documentation
 The full documentation is available at [docs.resms.dev](https://docs.resms.dev/python).
 
+Here is an implementation example of ReSMS Python package: https://github.com/ReSMS-dev/resms-python-example
+
 ## License
 This project is licensed under the MIT License.
 
